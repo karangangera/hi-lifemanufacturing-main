@@ -9,8 +9,10 @@ export function Footer() {
   return (
     <footer className="bg-[#0B1220] text-white/80">
       <div className="industrial-grid">
-        <div className="container-pro py-16 grid grid-cols-1 md:grid-cols-12 gap-10">
-          <div className="md:col-span-4">
+        <div className="container-pro py-16 grid grid-cols-1 md:grid-cols-12">
+          <div className="md:col-span-4" style={{paddingRight:'40px',
+          marginRight:'30px'
+          }}>
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-xl bg-white grid place-items-center">
                 <img src={logo} alt="Hi-Life" className="h-7" />
@@ -20,19 +22,19 @@ export function Footer() {
                 <div className="text-[10px] tracking-[0.25em] text-[#F59E0B] font-semibold">MANUFACTURING CO.</div>
               </div>
             </div>
-            <p className="mt-5 text-sm leading-relaxed">
+            {/* <p className="mt-5 text-sm leading-relaxed">
               Since 1981, Hi-Life Manufacturing has been India's trusted partner for precision industrial pump
               solutions — engineered in Ahmedabad and exported to 32 countries across the chemical, pharma,
               textile, paint, water-treatment and ceramics industries.
-            </p>
+            </p> */}
             <div className="mt-6 space-y-2.5 text-sm">
-              <div className="flex items-start gap-2.5"><MapPin className="h-4 w-4 text-[#F59E0B] mt-0.5" /><span>{company.address.line1}, {company.address.line2}</span></div>
+              <div className="flex items-start gap-2.5"><MapPin className="h-4 w-4 text-[#F59E0B] mt-1" /><span>{company.address.line1}, {company.address.line2}</span></div>
               <div className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-[#F59E0B]" /><a href={`tel:${company.phone}`} className="hover:text-white">{company.phone}</a></div>
               <div className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-[#F59E0B]" /><a href={`mailto:${company.email}`} className="hover:text-white">{company.email}</a></div>
             </div>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-2" style={{paddingLeft:'43px'}}>
             <h4 className="font-display font-semibold text-white text-sm tracking-wide">Quick Links</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {navLinks.map((l) => (
@@ -41,17 +43,17 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h4 className="font-display font-semibold text-white text-sm tracking-wide">Products</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {products.map((p) => (
                 <li key={p.slug}><Link to="/products/$slug" params={{ slug: p.slug }} className="hover:text-[#F59E0B] transition-colors">{p.name}</Link></li>
               ))}
             </ul>
-
           </div>
-          <div className="md:col-span-3">
-            <h4 className="mt-7 font-display font-semibold text-white text-sm tracking-wide">Industries</h4>
+
+          <div className="md:col-span-2">
+            <h4 className=" font-display font-semibold text-white text-sm tracking-wide">Industries</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {industries.slice(0, 4).map((i) => (
                 <li key={i.slug}><Link to="/industries" className="hover:text-[#F59E0B] transition-colors">{i.name}</Link></li>
@@ -59,7 +61,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h4 className="font-display font-semibold text-white text-sm tracking-wide">Newsletter</h4>
             <p className="mt-4 text-sm">Subscribe for engineering insights, product launches and case studies.</p>
             <form className="mt-4 flex gap-2" onSubmit={(e) => e.preventDefault()}>
