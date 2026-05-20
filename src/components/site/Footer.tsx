@@ -48,9 +48,12 @@ export function Footer() {
                 <li key={p.slug}><Link to="/products/$slug" params={{ slug: p.slug }} className="hover:text-[#F59E0B] transition-colors">{p.name}</Link></li>
               ))}
             </ul>
+
+          </div>
+          <div className="md:col-span-3">
             <h4 className="mt-7 font-display font-semibold text-white text-sm tracking-wide">Industries</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {industries.slice(0,4).map((i) => (
+              {industries.slice(0, 4).map((i) => (
                 <li key={i.slug}><Link to="/industries" className="hover:text-[#F59E0B] transition-colors">{i.name}</Link></li>
               ))}
             </ul>
